@@ -88,6 +88,15 @@ DeskBooker Solution:
 
 ### How this course is structured
 
+- Getting Started with Test Driven Development
+  - The Solution and projects do not yet exist. In TDD fashion, we'll begin with the Core Test Project (DeskBooker.Core.Tests)
+  - Iterate through TDD Cycle
+- Testing and Implementing Business Logic
+  - Test and Implement more complex requirements in the Core Project that will force you to decouple dependencies from the `DeskBookingRequestProcessor` class
+  - You will have to mock these dependencies in your test methods
+- Adding Features in an ASP.NET Core APP
+  - Learn how you can use TDD to add features in an ASP.NET Core application
+
 ### The First Requirement
 
 - Test
