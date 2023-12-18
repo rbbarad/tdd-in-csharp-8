@@ -58,6 +58,34 @@ Repeat the cycle!
 
 ### The Wired Brain Coffee Scenario
 
+Wired Brain Coffee is a company that runs several coffee shops across the world.
+
+In their shop in Zurich, they have desks for customers.
+
+They want a web application where customers can book a desk for a full day.
+
+They ask you to build the business logic and parts of the web application.
+
+#### Mockup
+
+- Overview (Book a desk)
+- Inputs for First Name, Last Name, Email, and Date
+- Button for Booking a desk
+
+This website will be part of a project that is called DeskBooker.Web. This will be an ASP.NET Core Web Application that is using RazorPages.
+
+#### The Planned Architecture
+
+DeskBooker Solution:
+
+- DeskBooker.Web (ASP.NET Core)
+  - The Web Project will reference the Core Project
+- DeskBooker.Core (.NET Core class library)
+  - Contains the business logic (core) of the application
+  - The central part of this logic is the `DeskBookingRequestProcessor` class
+- DeskBooker.DataAccess (Entity Framework Core)
+  - Accesses a SQL server database
+
 ### How this course is structured
 
 ### The First Requirement
