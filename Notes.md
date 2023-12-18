@@ -97,8 +97,27 @@ DeskBooker Solution:
 - Adding Features in an ASP.NET Core APP
   - Learn how you can use TDD to add features in an ASP.NET Core application
 
-### The First Requirement
+### Understanding The First Requirement
 
-- Test
-- Implement
-- Refactor
+`DeskBookingRequestProcessor` will contain the logic for booking a desk
+
+On the Web Page, a customer can enter: (input data)
+
+- FirstName
+- LastName
+- Email
+- Date
+
+1st requirement:
+
+- The Processor needs to return that input data again after the request was procssed
+
+Later, more info will be returned like the info on whether the desk booking was successful or not. For now, the 1st requirment is just that the input values need to be returned again.
+
+We will start with a test - but before you can write a test, you need to think about the API design.
+
+Let's say that we create a `BookDesk` method within the `DeskBookingRequestProcessor` class. Instead of passing each of the inputs as separate parameters to the `BookDesk` method, lets create a `DeskBookingRequest` class that has those 4 input properties and pass that to the method. Let's also define that the `BookDesk` method returns a `DeskBookingResult` instance that has the 4 input properties.
+
+Now that we've defined the API that satisfies our conditions, let's go ahead and create a test. Keep in mind that while we've planned the API, *nothing exists yet*.
+
+**This test will ensure that the input values are also in the result.**
