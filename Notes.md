@@ -135,3 +135,48 @@ Requirements:
 - Store the desk id on the booking
 - Return Success or NoDeskAvailable result code
 - Set the desk booking id on the result
+
+### Know How to Decouple Dependencies
+
+![DualResponsibilities](./Images/DualResponsibilities.png)
+
+**Single Responsibility Principle:** Every component like a class or method should have a single responsbility
+
+- A class or method should have only 1 reason to change
+
+In the above image, the BookDesk method has 2 Responsbilities!!
+
+- It has to process the `DeskBookingRequest` and it has to save the `DeskBooking` object
+- It definitely should not know how to save a `DeskBooking` object in the database
+
+What if we introduced a `DeskBookingRepository` class that has a Save method that is responsible for saving the `DeskBooking` object into the Database?
+
+![ImplementationDependency](./Images/ImplementationDependency.png)
+
+Here, we can pass an instance of the Repository into the constructor of the Processor, and then the `BookDesk` method can call the Repository Save method to save a DeskBooking object.
+
+Now, we can see that the `BookDesk` method does not depend on the database anymore and it does not need to know how the DeskBooking object is saved, which is great!
+
+But now, the `DeskBookingRequestProcessor` class directly depends on the `DeskBookingRepository` class and its Save method. As this Save method is actually accessing the database, this structure does not work for a unit test.
+
+- This is because the unit test should run in isolation and it should not depend on a database that might be on a server
+
+**Dependency Inversion Principle:** Components must depend on abstractions and not on implementations.
+
+**We can break up this dependency by introducing an interface!**
+
+![ImplementedInterface](./Images/ImplementedInterface.png)
+
+Now you can pass an object that implements this interface into the constructor of the Processor, and then the BookDesk method can call the Save method of the interface.
+
+Now, the `DeskBookingRequestProcessor` class depends on an abstraction which is the `IDeskBookingRespository` interface. It does not depend on an implementation like the `DeskBookingRepository` class that is accessing the database.
+
+So, it is no problem that we don't have the Repository class in the database yet as the Processor class just depends on the interface.
+
+This means, to write a test for the 1st requirement, we need to introduce an interface. And in the tests, we create a Mock object that implements the interface. This Mock object does not access the database -- it is just a fake object for your tests.
+
+![MockedInterface](./Images/MockedInterface.png)
+
+1. We pass the Mock object into the Processor's constructor
+1. Then, we cal the `BookDesk` method in the unit test
+1. Last, we verify that the Save method of the Mock object was called and that the expected `DeskBooking` object was passed as an argument to that Save method
