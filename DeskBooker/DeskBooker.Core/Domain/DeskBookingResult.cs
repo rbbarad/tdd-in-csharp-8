@@ -1,6 +1,6 @@
-﻿namespace DeskBooker.Core.Processor
+﻿namespace DeskBooker.Core.Domain
 {
-    internal class DeskBookingResult
+    public class DeskBookingResult
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
