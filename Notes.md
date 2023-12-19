@@ -121,3 +121,17 @@ Let's say that we create a `BookDesk` method within the `DeskBookingRequestProce
 Now that we've defined the API that satisfies our conditions, let's go ahead and create a test. Keep in mind that while we've planned the API, *nothing exists yet*.
 
 **This test will ensure that the input values are also in the result.**
+
+## Testing and Implementing Business Logic
+
+### Understand the Requirements
+
+Requirements:
+
+- ~~Return result with request values~~
+- ~~Throw exception if request is null~~
+- Save a desk booking
+- Check if a desk is available
+- Store the desk id on the booking
+- Return Success or NoDeskAvailable result code
+- Set the desk booking id on the result
