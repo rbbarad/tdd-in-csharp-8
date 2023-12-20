@@ -180,3 +180,7 @@ This means, to write a test for the 1st requirement, we need to introduce an int
 1. We pass the Mock object into the Processor's constructor
 1. Then, we cal the `BookDesk` method in the unit test
 1. Last, we verify that the Save method of the Mock object was called and that the expected `DeskBooking` object was passed as an argument to that Save method
+
+### Check if a Desk Is Available
+
+![CheckIfDeskIsAvailable](./Images/CheckIfDeskIsAvailable.png)
