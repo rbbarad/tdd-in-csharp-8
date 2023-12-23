@@ -194,3 +194,9 @@ We already have a `ShouldSaveDeskBooking` test method that checks for the Desk P
 ### Return Success or NoDeskAvailable Result Code
 
 ![ReturnSuccessOrNoDeskAvailableResultCode](./Images/ReturnSuccessOrNoDeskAvailableResultCode.png)
+
+### Set Desk Booking Id on the Result
+
+![SetDeskBookingIdOnTheResult](./Images/SetDeskBookingIdOnTheResult.png)
+
+If Desk Booking was successfully created, you should set the ID of the DeskBooking on the result object. If NoDeskAvailable, ID should be null. This means that ID should be a nullable integer
