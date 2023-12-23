@@ -184,3 +184,9 @@ This means, to write a test for the 1st requirement, we need to introduce an int
 ### Check if a Desk Is Available
 
 ![CheckIfDeskIsAvailable](./Images/CheckIfDeskIsAvailable.png)
+
+### Store the Desk ID on the Booking
+
+![StoreTheDeskIdOnTheBooking](./Images/StoreTheDeskIdOnTheBooking.png)
+
+We already have a `ShouldSaveDeskBooking` test method that checks for the Desk Properties -- Lets modify this to check for the Desk ID as well.
