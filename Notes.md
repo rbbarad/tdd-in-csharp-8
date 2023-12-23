@@ -190,3 +190,7 @@ This means, to write a test for the 1st requirement, we need to introduce an int
 ![StoreTheDeskIdOnTheBooking](./Images/StoreTheDeskIdOnTheBooking.png)
 
 We already have a `ShouldSaveDeskBooking` test method that checks for the Desk Properties -- Lets modify this to check for the Desk ID as well.
+
+### Return Success or NoDeskAvailable Result Code
+
+![ReturnSuccessOrNoDeskAvailableResultCode](./Images/ReturnSuccessOrNoDeskAvailableResultCode.png)
